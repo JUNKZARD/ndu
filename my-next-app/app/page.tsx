@@ -3,19 +3,21 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-800 text-white">
+    <main className="min-h-screen bg-gray-800 text-white overflow-x-hidden">
       {/* navbar start */}
-      <nav className="w-full px-10 py-5 border-b border-green-50">
-        <div className="flex items-center justify-between">
-          <div className="pl-20">
-            <h1 className="text-4xl font-extrabold text-black">Gung Pandu</h1>
+      <nav className="w-full px-6 md:px-10 py-5 border-b border-green-50">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+          <div className="md:pl-10">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-black">
+              Gung Pandu
+            </h1>
           </div>
-          <ul className="flex items-center gap-8 text-lg font-medium pr-20">
+          <ul className="flex items-center gap-6 md:gap-8 text-base md:text-lg font-medium md:pr-10">
             <li className="hover:text-blue-400 transition-colors cursor-pointer">
               <Link href="/">Home</Link>
             </li>
             <li className="hover:text-blue-400 transition-colors cursor-pointer">
-              <a href="#about">About me</a>
+              <a href="#about">About</a>
             </li>
             <li className="hover:text-blue-400 transition-colors cursor-pointer">
               <Link href="#contact">Contact</Link>
@@ -26,19 +28,25 @@ export default function Home() {
       {/* navbar end */}
 
       {/* main section start */}
-      <section className="pt-20 border-b-white border-b pb-20">
-        <div className="pl-80 flex">
-          <img
-            className="w-64 h-auto rounded-full border-4"
-            src="/profile biodata.jpeg"
-            alt=""
-          />
-          <div className="pl-10 flex flex-col justify-center">
-            <h2 className="text-3xl font-bold mb-2">
-              Hi I'm <span className="text-black"> Pandu </span> 🙌🙌
+      <section className="py-16 md:py-20 border-b-white border-b">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+          <div className="shrink-0">
+            <Image
+              className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white object-cover"
+              src="/profile-biodata.jpeg"
+              alt="Profile Pandu"
+              width={256}
+              height={256}
+              priority
+            />
+          </div>
+          <div className="flex flex-col justify-center text-center md:text-left">
+            <h2 className="text-2xl md:text-4xl font-bold mb-2">
+              Hi I&apos;m <span className="text-black"> Pandu </span> 🙌
             </h2>
-            <h4 className="text-2xl font-medium">
-              <span className="text-black"> I'm</span> Computer Science Student
+            <h4 className="text-xl md:text-2xl font-medium">
+              <span className="text-black"> I&apos;m</span> Computer Science
+              Student
             </h4>
           </div>
         </div>
@@ -46,50 +54,67 @@ export default function Home() {
       {/* main section end */}
 
       {/* About me start*/}
-      <section className="pt-20 border-b-white border-b pb-20" id="about">
-        <div className="flex justify-center mb-18 mt-18">
-          <h1 className="text-4xl text-black font-bold">About me</h1>
+      <section className="py-16 md:py-20 border-b-white border-b" id="about">
+        <div className="flex justify-center mb-10">
+          <h1 className="text-3xl md:text-4xl text-black font-bold">
+            About me
+          </h1>
         </div>
-        <div className="pt-10 flex justify-center items-center pl-5">
-          <img
-            className="w-38 h-auto rounded-xl border-2 "
-            src="/profile biodata.jpeg"
-            alt=""
-          />
-          <div className="flex justify-center pl-5 items-center">
-            <p className=" ">
+        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+          <div className="shrink-0">
+            <Image
+              className="w-32 h-32 md:w-40 md:h-40 rounded-xl border-4 border-white object-cover"
+              src="/profile-biodata.jpeg"
+              alt="Profile Biodata"
+              width={160}
+              height={160}
+            />
+          </div>
+          <div className="text-center md:text-left">
+            <p className="text-sm md:text-base leading-relaxed">
               Hello guys! saya pandu, saya adalah mahasiswa primakara dengan
-              jurusan informatika. hobby saya bermain <strong>Volly</strong>,
-              <strong> Games </strong> dan <strong> Musik </strong> saya lahir
+              jurusan informatika. hobby saya bermain <strong>Volley</strong>,
+              <strong> Games </strong> dan <strong> Music </strong> saya lahir
               pada tanggal 20-02-2006 di kota Bangli dan saya lulusan dari SMA
               Negeri 2 Bangli. dan saya memiliki cita-cita menjadi seorang
-              <strong>Programmer</strong> yang handal dan sukses di masa depan.
+              <strong> Programmer </strong> yang handal dan sukses di masa
+              depan.
             </p>
           </div>
         </div>
       </section>
-
       {/* About me end */}
-
-      {/* contac start */}
-      <section className="border-b-white border-b pb-20" id="contact">
-        <div className="flex justify-center mb-18 mt-18 ">
-          <h1 className="text-4xl text-black font-bold">Contac</h1>
+      {/* contact start */}
+      <section className="py-16 md:py-20 border-b-white border-b" id="contact">
+        <div className="flex justify-center mb-10">
+          <h1 className="text-3xl md:text-4xl text-black font-bold">Contact</h1>
         </div>
-        <div className="flex gap-10 justify-center">
+        <div className="flex gap-8 md:gap-10 justify-center">
           <Link href="https://www.instagram.com/gungdepandu" target="_blank">
-            <img className="w-20 h-20" src="/ig.png" alt="ig" />
+            <Image
+              src="/ig.png"
+              alt="Instagram"
+              width={60}
+              height={60}
+              className="w-12 h-12 md:w-16 md:h-16 hover:scale-110 transition-transform"
+            />
           </Link>
-          <Link href="mailto://www.gungpandu2006@gmail.com/" target="_blank">
-            <img className="w-20 h-20" src="/email.png" alt="email" />
+          <Link href="mailto:gungpandu2006@gmail.com" target="_blank">
+            <Image
+              src="/email.png"
+              alt="Email"
+              width={60}
+              height={60}
+              className="w-12 h-12 md:w-16 md:h-16 hover:scale-110 transition-transform"
+            />
           </Link>
         </div>
       </section>
-      {/* contac end */}
+      {/* contact end */}
 
       {/* footer start */}
-      <footer className="flex justify-center pt-20 items-center pb-5">
-        <p>&copy;2026 Gung Pandu.</p>
+      <footer className="flex justify-center py-10 items-center">
+        <p className="text-sm md:text-base">&copy; 2026 Gung Pandu.</p>
       </footer>
       {/* footer end */}
     </main>
